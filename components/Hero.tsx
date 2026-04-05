@@ -17,8 +17,18 @@ export default function Hero() {
             UI/UX DESIGNER
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-[80px] font-headline font-extrabold text-gray-900 leading-[1.1]">
-            Hello, my<br className="hidden md:block"/> name is<br/>
-            <span className="italic font-normal">Gurusha<br className="hidden md:block"/> Arora.</span>
+            <span className="block overflow-hidden pb-2 -mb-2 md:pb-3 md:-mb-3">
+              <span className="block" style={{ animation: 'revealText 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both' }}>Hello, my</span>
+            </span>
+            <span className="block overflow-hidden pb-2 -mb-2 md:pb-3 md:-mb-3">
+              <span className="block" style={{ animation: 'revealText 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both' }}>name is</span>
+            </span>
+            <span className="block overflow-hidden pb-2 -mb-2 md:pb-3 md:-mb-3">
+              <span className="block italic font-normal" style={{ animation: 'revealText 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both' }}>Gurusha</span>
+            </span>
+            <span className="block overflow-hidden pb-2 -mb-2 md:pb-3 md:-mb-3">
+              <span className="block italic font-normal text-[#b08210]" style={{ animation: 'revealText 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both' }}>Arora.</span>
+            </span>
           </h1>
           <p className="text-base md:text-lg text-gray-500 max-w-lg leading-relaxed font-light pb-2">
             UX/UI Designer with 2+ years of experience crafting intuitive, data-informed digital experiences. Blending user empathy with business outcomes across ERP, media, and accessibility platforms.
