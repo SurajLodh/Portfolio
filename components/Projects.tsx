@@ -55,29 +55,31 @@ export default function Projects() {
           {projectsData.map((project) => (
             <section 
               key={project.id} 
-              className={`flex flex-col ${project.reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 lg:gap-24`}
+              className={`group flex flex-col ${project.reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 lg:gap-24 cursor-pointer`}
             >
               <div className="flex-1 space-y-5">
                 <div className="flex items-center gap-4 text-[9px] uppercase tracking-wider text-gray-400">
-                  <span className="font-bold border border-gray-200 px-3 py-1 rounded bg-white text-gray-600">{project.role}</span>
+                  <span className="font-bold border border-gray-200 px-3 py-1 rounded bg-white text-gray-600 transition-colors duration-300 group-hover:border-[#e9c766] group-hover:text-[#b08210]">{project.role}</span>
                   <span className="font-semibold">{project.date}</span>
                 </div>
-                <h3 className="text-3xl font-headline font-bold text-gray-900">{project.title}</h3>
+                <h3 className="text-3xl font-headline font-bold text-gray-900 transition-colors duration-300 group-hover:text-[#b08210]">{project.title}</h3>
                 <p className="text-[15px] font-body text-gray-600 leading-relaxed font-light">
                   {project.description}
                 </p>
                 <div className="pt-2">
-                  <button className="px-6 py-2.5 border border-gray-300 bg-[#f8f9fa] text-gray-700 font-medium rounded hover:bg-white transition-colors text-sm shadow-sm">
+                  <button className="px-6 py-2.5 border border-gray-300 bg-[#f8f9fa] text-gray-700 font-medium rounded transition-colors text-sm shadow-sm group-hover:bg-[#111827] group-hover:text-white group-hover:border-[#111827] duration-300">
                       View Project
                   </button>
                 </div>
               </div>
-              <div className="flex-1 w-full rounded-2xl overflow-hidden shadow-2xl bg-white p-1">
-                <img 
-                  alt={project.title} 
-                  className="w-full h-auto object-cover rounded-xl" 
-                  src={project.image}
-                />
+              <div className="flex-1 w-full rounded-[24px] shadow-xl bg-white p-2 transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-100">
+                <div className="w-full h-full rounded-[16px] overflow-hidden">
+                  <img 
+                    alt={project.title} 
+                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]" 
+                    src={project.image}
+                  />
+                </div>
               </div>
             </section>
           ))}
