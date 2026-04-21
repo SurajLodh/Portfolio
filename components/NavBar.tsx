@@ -2,16 +2,19 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { ThemeToggle } from './ThemeToggle';
 import { usePathname } from 'next/navigation';
 
 export default function NavBar() {
   const pathname = usePathname();
   
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white">
+    <nav 
+      className="fixed top-0 w-full z-50 shadow-sm border-b border-gray-200 dark:border-gray-800 transition-all dark:bg-[#0f172a]/80 bg-white/65 backdrop-blur-md"
+    >
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-24">
         {/* Logo */}
-        <Link href="/" className="text-3xl font-headline font-bold text-[#0f172a] italic tracking-tight">
+        <Link href="/" className="text-3xl font-headline font-bold text-[#0f172a] dark:text-white italic tracking-tight">
           Gurusha Arora
         </Link>
         
@@ -19,19 +22,19 @@ export default function NavBar() {
         <div className="hidden md:flex items-center gap-10">
           <Link 
             href="/work"
-            className={`${(pathname === '/work' || pathname.startsWith('/work/')) ? 'text-[#1e293b] border-b-2 border-[#f0b92f]' : 'text-[#64748b] hover:text-[#1e293b] border-b-2 border-transparent'} pb-1 font-label text-xs uppercase tracking-widest font-medium transition-all`}
+            className={`${(pathname === '/work' || pathname.startsWith('/work/')) ? 'text-[#1e293b] dark:text-white border-b-2 border-[#f0b92f]' : 'text-[#64748b] hover:text-[#1e293b] dark:text-gray-400 dark:hover:text-gray-100 border-b-2 border-transparent'} pb-1 font-label text-xs uppercase tracking-widest font-medium transition-all`}
           >
             Work
           </Link>
           <Link 
             href="/about"
-            className={`${pathname === '/about' || pathname.startsWith('/about/')  ? 'text-[#1e293b] border-b-2 border-[#f0b92f]' : 'text-[#64748b] hover:text-[#1e293b] border-b-2 border-transparent'} pb-1 font-label text-xs uppercase tracking-widest font-medium transition-all`}
+            className={`${pathname === '/about' || pathname.startsWith('/about/')  ? 'text-[#1e293b] dark:text-white border-b-2 border-[#f0b92f]' : 'text-[#64748b] hover:text-[#1e293b] dark:text-gray-400 dark:hover:text-gray-100 border-b-2 border-transparent'} pb-1 font-label text-xs uppercase tracking-widest font-medium transition-all`}
           >
             About
           </Link>
           <Link 
             href="/contacts"
-            className={`${pathname === '/contacts' || pathname.startsWith('/contacts/') ? 'text-[#1e293b] border-b-2 border-[#f0b92f]' : 'text-[#64748b] hover:text-[#1e293b] border-b-2 border-transparent'} pb-1 font-label text-xs uppercase tracking-widest font-medium transition-all`}
+            className={`${pathname === '/contacts' || pathname.startsWith('/contacts/') ? 'text-[#1e293b] dark:text-white border-b-2 border-[#f0b92f]' : 'text-[#64748b] hover:text-[#1e293b] dark:text-gray-400 dark:hover:text-gray-100 border-b-2 border-transparent'} pb-1 font-label text-xs uppercase tracking-widest font-medium transition-all`}
           >
             Contact
           </Link>
@@ -42,6 +45,8 @@ export default function NavBar() {
           >
             Hire Me
           </a>
+          
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Toggle */}

@@ -3,34 +3,34 @@ import Link from 'next/link';
 
 export default function AniNewsCaseStudy() {
   return (
-    <div className="bg-[#fcfcfc] w-full min-h-screen pb-20">
+    <div className="bg-[#fcfcfc] dark:bg-[#0f172a] transition-colors duration-300 w-full min-h-screen pb-20 text-gray-900 dark:text-gray-50">
       
       {/* Hero Header */}
       <div className="max-w-7xl mx-auto px-8 pt-0 lg:pt-6 pb-20">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 mb-16">
           <div className="flex-[2] space-y-6">
-            <h1 className="text-5xl md:text-6xl lg:text-[84px] font-headline font-bold text-[#1f2937] leading-[1.1] tracking-tight">
-              ANI News — <br />
+            <h1 className="text-5xl md:text-6xl lg:text-[84px] font-headline font-bold text-[#1f2937] dark:text-gray-50 leading-[1.1] tracking-tight">
+              ANI News  <br />
               <span className="italic">Platform Redesign</span>
             </h1>
-            <p className="text-gray-500 max-w-xl leading-relaxed font-light text-lg lg:text-xl">
+            <p className="text-gray-500 dark:text-gray-400 max-w-xl leading-relaxed font-light text-lg lg:text-xl">
               A digital evolution for India's premier news agency, transforming content delivery for over 3 million monthly active users through a unified design language.
             </p>
           </div>
 
           <div className="flex-1 flex flex-col justify-center">
-            <div className="border-l border-gray-200 pl-8 space-y-6">
+            <div className="border-l border-gray-200 dark:border-gray-700 pl-8 space-y-6">
                <div className="space-y-1">
                  <div className="text-[9px] text-[#9ca3af] font-bold uppercase tracking-widest">ROLE</div>
-                 <div className="text-base font-medium text-gray-800">Product Designer</div>
+                 <div className="text-base font-medium text-gray-800 dark:text-gray-200">Product Designer</div>
                </div>
                <div className="space-y-1">
                  <div className="text-[9px] text-[#9ca3af] font-bold uppercase tracking-widest">TIMELINE</div>
-                 <div className="text-base font-medium text-gray-800">Feb 2026 – Present</div>
+                 <div className="text-base font-medium text-gray-800 dark:text-gray-200">Feb 2026  Present</div>
                </div>
                <div className="space-y-1">
                  <div className="text-[9px] text-[#9ca3af] font-bold uppercase tracking-widest">CLIENT</div>
-                 <div className="text-base font-medium text-gray-800">ANI News · VoxturrLabs</div>
+                 <div className="text-base font-medium text-gray-800 dark:text-gray-200">ANI News  VoxturrLabs</div>
                </div>
             </div>
           </div>
@@ -46,20 +46,20 @@ export default function AniNewsCaseStudy() {
       </div>
 
       {/* The Challenge Section */}
-      <div className="bg-[#f8f9fa] py-24 md:py-32 w-full">
+      <div className="bg-[#f8f9fa] dark:bg-gray-900 py-24 md:py-32 w-full">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row gap-16 lg:gap-32">
             <div className="flex-1 space-y-8">
-              <span className="inline-block px-4 py-1.5 bg-[#f0b92f] text-gray-900 text-[10px] uppercase font-bold tracking-widest rounded-sm">
+              <span className="inline-block px-4 py-1.5 bg-[#f0b92f] text-gray-900 dark:text-gray-50 text-[10px] uppercase font-bold tracking-widest rounded-sm">
                 THE CHALLENGE
               </span>
-              <h2 className="text-4xl lg:text-5xl font-headline font-bold text-gray-900 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-headline font-bold text-gray-900 dark:text-gray-50 leading-tight">
                 Fragmented workflows <br />
                 and editorial <br />
                 bottlenecks.
               </h2>
             </div>
-            <div className="flex-1 space-y-6 text-gray-600 font-light leading-relaxed text-lg pt-2 md:pt-16">
+            <div className="flex-1 space-y-6 text-gray-600 dark:text-gray-300 font-light leading-relaxed text-lg pt-2 md:pt-16">
               <p>
                 ANI News operates as a massive scale, serving millions of viewers and thousands of media partners. However, the legacy platform suffered from a fragmented design language that made updates slow and inconsistent across web and mobile.
               </p>
@@ -74,10 +74,10 @@ export default function AniNewsCaseStudy() {
       {/* The Editorial Approach */}
       <div className="max-w-7xl mx-auto px-8 py-24 md:py-32">
         <div className="max-w-2xl mb-16">
-          <h2 className="text-4xl lg:text-5xl font-headline italic font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-headline italic font-bold text-gray-900 dark:text-gray-50 mb-6">
             The Editorial Approach
           </h2>
-          <p className="text-gray-500 font-light leading-relaxed text-lg">
+          <p className="text-gray-500 dark:text-gray-400 font-light leading-relaxed text-lg">
             Architecting a system that balances journalistic authority with modern digital efficiency.
           </p>
         </div>
@@ -85,16 +85,16 @@ export default function AniNewsCaseStudy() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
           {/* Card 1 */}
-          <div className="bg-white border border-gray-100 rounded-[2rem] p-10 shadow-sm lg:col-span-2 flex flex-col justify-between space-y-8 group transition-all duration-300 hover:shadow-lg">
+          <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-800 rounded-[2rem] p-10 shadow-sm lg:col-span-2 flex flex-col justify-between space-y-8 group transition-all duration-300 hover:shadow-lg">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#f0b92f] flex items-center justify-center text-gray-900 font-bold text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#f0b92f] flex items-center justify-center text-gray-900 dark:text-gray-50 font-bold text-sm">
                   01
                 </div>
-                <h3 className="text-2xl font-headline italic font-bold text-gray-900">Foundation: The 'News-First' Design System</h3>
+                <h3 className="text-2xl font-headline italic font-bold text-gray-900 dark:text-gray-50">Foundation: The 'News-First' Design System</h3>
               </div>
-              <p className="text-gray-500 font-light leading-relaxed">
-                We developed a comprehensive component library focusing on high-density information display. The system utilizes a hybrid typographic scale—Noto Serif for headlines to maintain ANI's heritage authority, and Manrope for data-heavy editorial dashboards.
+              <p className="text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+                We developed a comprehensive component library focusing on high-density information display. The system utilizes a hybrid typographic scaleNoto Serif for headlines to maintain ANI's heritage authority, and Manrope for data-heavy editorial dashboards.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 pt-4">
@@ -108,28 +108,28 @@ export default function AniNewsCaseStudy() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#f8f9fa] rounded-[2rem] p-10 shadow-sm flex flex-col space-y-8 group transition-all duration-300 hover:shadow-lg relative overflow-hidden">
+          <div className="bg-[#f8f9fa] dark:bg-gray-900 rounded-[2rem] p-10 shadow-sm flex flex-col space-y-8 group transition-all duration-300 hover:shadow-lg relative overflow-hidden">
             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#e9c766] rounded-full blur-2xl opacity-40"></div>
             <div className="space-y-6 relative z-10">
               <div className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-900 font-bold text-sm">
+                <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-900 dark:text-gray-50 font-bold text-sm">
                   02
                 </div>
-                <h3 className="text-2xl font-headline italic font-bold text-gray-900">CMS Redesign</h3>
+                <h3 className="text-2xl font-headline italic font-bold text-gray-900 dark:text-gray-50">CMS Redesign</h3>
               </div>
-              <p className="text-gray-500 font-light leading-relaxed text-sm">
+              <p className="text-gray-500 dark:text-gray-400 font-light leading-relaxed text-sm">
                 Creating a custom dashboard for editors that reduced time-to-publish by 40% through intuitive UI architecture and real-time collaboration tools.
               </p>
             </div>
           </div>
 
           {/* Card 3 - Full width */}
-          <div className="bg-[#1f2937] rounded-[2rem] p-8 md:p-12 shadow-xl lg:col-span-3 flex flex-col md:flex-row items-center gap-10 overflow-hidden relative group">
+          <div className="bg-[#1f2937] dark:bg-[#111827] rounded-[2rem] p-8 md:p-12 shadow-xl lg:col-span-3 flex flex-col md:flex-row items-center gap-10 overflow-hidden relative group">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#374151] rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/4"></div>
             
             <div className="flex-1 space-y-6 relative z-10">
               <div className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#f0b92f] flex items-center justify-center text-gray-900 font-bold text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#f0b92f] flex items-center justify-center text-gray-900 dark:text-gray-50 font-bold text-sm">
                   03
                 </div>
                 <h3 className="text-2xl font-headline italic font-bold text-white">User-Centric News Feed</h3>
@@ -152,7 +152,7 @@ export default function AniNewsCaseStudy() {
       {/* Interface Explorations */}
       <div className="max-w-7xl mx-auto px-8 pb-32">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-headline italic font-bold text-gray-900 inline-block pb-4 border-b-4 border-[#f0b92f]">
+          <h2 className="text-4xl md:text-5xl font-headline italic font-bold text-gray-900 dark:text-gray-50 inline-block pb-4 border-b-4 border-[#f0b92f]">
             Interface Explorations
           </h2>
         </div>
@@ -164,16 +164,16 @@ export default function AniNewsCaseStudy() {
            </div>
 
            {/* Top Right Box */}
-           <div className="bg-[#f8f9fa] rounded-[2rem] p-8 space-y-6 flex flex-col justify-center border border-gray-100 shadow-sm h-[300px]">
+           <div className="bg-[#f8f9fa] dark:bg-gray-900 rounded-[2rem] p-8 space-y-6 flex flex-col justify-center border border-gray-100 dark:border-gray-800 shadow-sm h-[300px]">
              <span className="text-[9px] uppercase tracking-widest font-bold text-gray-400">DESIGN SYSTEM</span>
-             <p className="text-gray-600 font-light text-sm leading-relaxed">
+             <p className="text-gray-600 dark:text-gray-300 font-light text-sm leading-relaxed">
                The new CMS dashboard provides a modular block-based editor, allowing journalists to build complex stories up to 40% faster.
              </p>
            </div>
            
            {/* Mid Right Image */}
-           <div className="h-[300px] rounded-[2rem] overflow-hidden shadow-lg group border border-gray-100">
-             <img src="https://images.unsplash.com/photo-1481481600674-e9a5c88b64a2?q=80&w=2071&auto=format&fit=crop" className="w-full h-full object-cover bg-white p-4 group-hover:scale-105 transition-transform duration-700" alt="Article Mockup" />
+           <div className="h-[300px] rounded-[2rem] overflow-hidden shadow-lg group border border-gray-100 dark:border-gray-800">
+             <img src="https://images.unsplash.com/photo-1481481600674-e9a5c88b64a2?q=80&w=2071&auto=format&fit=crop" className="w-full h-full object-cover bg-white dark:bg-gray-800 p-4 group-hover:scale-105 transition-transform duration-700" alt="Article Mockup" />
            </div>
 
            {/* Bottom Left Image */}
@@ -182,7 +182,7 @@ export default function AniNewsCaseStudy() {
            </div>
 
            {/* Bottom Mid Image */}
-           <div className="h-[300px] rounded-[2rem] overflow-hidden shadow-lg bg-gray-50 border border-gray-100 group flex items-center justify-center p-6">
+           <div className="h-[300px] rounded-[2rem] overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 group flex items-center justify-center p-6">
              <div className="w-32 h-[90%] bg-black rounded-3xl shadow-xl group-hover:scale-105 transition-transform duration-500 border border-gray-800"></div>
            </div>
 
@@ -220,7 +220,7 @@ export default function AniNewsCaseStudy() {
                  </p>
               </div>
               <div>
-                 <Link href="/work" className="inline-flex items-center gap-3 px-8 py-4 bg-[#f0b92f] text-gray-900 font-bold rounded-full shadow-lg hover:bg-white transition-colors duration-300 text-sm hover:scale-105 hover:-translate-y-1">
+                 <Link href="/work" className="inline-flex items-center gap-3 px-8 py-4 bg-[#f0b92f] text-gray-900 dark:text-gray-50 font-bold rounded-full shadow-lg hover:bg-white dark:bg-gray-800 transition-colors duration-300 text-sm hover:scale-105 hover:-translate-y-1">
                    View Next Project
                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                  </Link>
