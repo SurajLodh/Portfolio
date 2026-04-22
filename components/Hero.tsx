@@ -10,40 +10,43 @@ export default function Hero() {
   };
 
   return (
-    <header className="relative py-2 md:py-4 overflow-hidden bg-white dark:bg-[#0f172a] transition-colors duration-300 flex items-center min-h-[calc(100vh-6rem)]" id="about">
-      <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-8 lg:gap-12 w-full">
-        <div className="flex-1 space-y-5 z-10 w-full mt-4 md:mt-0">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-[#fcf1c5] dark:bg-[#403310] text-[#8e6e14] dark:text-[#f4c844] font-bold text-[10px] tracking-widest uppercase transition-colors">
+    <header className="relative py-2 md:py-4 overflow-hidden bg-background flex items-center min-h-[calc(100vh-6rem)]" id="about">
+      <div className="absolute inset-0 swiss-grid-pattern pointer-events-none"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-stretch gap-8 lg:gap-12 w-full relative z-10">
+        <div className="flex-1 space-y-6 z-10 w-full mt-4 md:mt-0 pt-10">
+          <div className="inline-block px-4 py-2 border-2 border-black dark:border-white bg-white dark:bg-black text-black dark:text-white font-black text-xs tracking-widest uppercase transition-none">
             UI/UX DESIGNER
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-[72px] font-headline font-extrabold text-gray-900 dark:text-gray-50 transition-colors leading-[1.1]">
-            <span className="block overflow-hidden pb-2 -mb-2 md:pb-3 md:-mb-3">
-              <span className="block" style={{ animation: 'revealText 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both' }}>Hello, my</span>
-            </span>
-            <span className="block overflow-hidden pb-2 -mb-2 md:pb-3 md:-mb-3">
-              <span className="block" style={{ animation: 'revealText 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both' }}>name is</span>
-            </span>
-            <span className="block overflow-hidden pb-2 -mb-2 md:pb-3 md:-mb-3">
-              <span className="block italic font-normal" style={{ animation: 'revealText 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both' }}>Gurusha</span>
-            </span>
-            <span className="block overflow-hidden pb-2 -mb-2 md:pb-3 md:-mb-3">
-              <span className="block italic font-normal text-[#b08210] dark:text-[#f4c844] transition-colors" style={{ animation: 'revealText 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both' }}>Arora.</span>
-            </span>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-headline font-black text-on-background uppercase tracking-tighter leading-[0.9]">
+            <span className="block pb-2">HELLO, MY</span>
+            <span className="block pb-2">NAME IS</span>
+            <span className="block pb-2">GURUSHA</span>
+            <span className="block text-[#FF3000]">ARORA.</span>
           </h1>
-          <p className="text-base md:text-lg text-gray-500 dark:text-gray-400 transition-colors max-w-lg leading-relaxed font-light pb-0 md:pb-1">
-            UX/UI Designer with 2+ years of experience crafting intuitive, data-informed digital experiences. Blending user empathy with business outcomes across ERP, media, and accessibility platforms.
+          <p className="text-xl md:text-2xl text-on-background max-w-xl font-medium leading-tight pb-4 pt-4 border-l-4 border-black dark:border-white pl-6">
+            Designer crafting intuitive, data-informed interfaces. Brutal precision, objective structure, and undeniable clarity across ERP and media platforms.
           </p>
-          <div className="flex flex-wrap gap-4 pt-2">
+          <div className="flex flex-wrap gap-4 pt-4">
             <a 
-              className="px-8 py-3 bg-[#cf9a17] dark:bg-[#f4c844] text-white dark:text-[#251a00] font-semibold rounded shadow hover:bg-[#b08210] dark:hover:bg-[#dfb12c] transition-colors flex items-center gap-2 text-sm cursor-pointer" 
+              className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-black uppercase tracking-widest text-xs border-2 border-black dark:border-white hover:bg-[#FF3000] hover:text-white hover:border-[#FF3000] transition-none flex items-center gap-3 cursor-pointer" 
               href="#work"
               onClick={scrollToWork}
             >
               Work
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
             <a 
-              className="px-8 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm" 
+              className="px-8 py-4 bg-transparent text-on-background font-black uppercase tracking-widest text-xs border-2 border-black dark:border-white hover:bg-[#FF3000] hover:text-white hover:border-[#FF3000] transition-none flex items-center gap-3"
+              href="/media/Gurusha_Arora_UX_UI_Designer.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter"><path d="M21 15v4h-16v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Resume
+            </a>
+            <a 
+              className="px-8 py-4 bg-transparent text-on-background font-black uppercase tracking-widest text-xs border-2 border-black dark:border-white hover:bg-[#FF3000] hover:text-white hover:border-[#FF3000] transition-none" 
               href="https://linkedin.com/in/gurushaarora1611" 
               target="_blank"
               rel="noopener noreferrer"
@@ -52,15 +55,12 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <div className="flex-1 relative flex justify-center items-center mt-8 md:mt-0">
-          {/* Subtle yellow glow behind image */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-[#fbf5dc] dark:bg-[#403310] transition-colors rounded-full blur-3xl -z-10"></div>
-          
-          <div className="relative w-72 h-72 md:w-[350px] md:h-[350px] lg:w-[380px] lg:h-[380px]">
-            <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#e9c766] shadow-xl">
+        <div className="flex-1 relative flex justify-center items-center mt-12 md:mt-0 p-8 border-l-0 md:border-l-4 border-black dark:border-white">
+          <div className="relative w-full aspect-square max-w-[400px]">
+            <div className="w-full h-full border-4 border-black dark:border-white bg-on-background overflow-hidden relative group">
               <img 
                 alt="Gurusha Arora" 
-                className="w-full h-full object-cover grayscale opacity-90" 
+                className="w-full h-full object-cover grayscale dark:grayscale-0 opacity-90 dark:opacity-100 group-hover:grayscale-0 group-hover:opacity-100 transition-none" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkUg3TOQLHfUIypLJPqCXzfn4-mvBrP-bF4oLeBOwvaHCCZUs_RdK_ucoiMj1qV9F-u_x7_qxroqJSpL7MnGExzPcTUOiJKn8miXum5BwcXJsxhZqNsW1J-LIpddt3bUDGCSVm2DzT7Ok098JaXDkIdc09IpY58FDzqXNkHtRxOLk4hYmpUTAmLMt90TrioLy9dz4N1vPD6pP665baImdLLifezwePxLkyhGWyW5MqqIwGCOyIW3umnpgNv_EL-EEkuTGfHaEEVohk"
               />
             </div>
