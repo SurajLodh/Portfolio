@@ -1,4 +1,4 @@
-# Gurusha Arora — Portfolio
+# Gurusha Arora — [Portfolio]
 
 > **A UX/UI Designer portfolio built with Next.js 16, React 19, and Tailwind CSS v4.** Showcasing high-impact product design work across media platforms, ERP ecosystems, and accessibility-first experiences.
 
