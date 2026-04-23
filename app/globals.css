@@ -1,81 +1,97 @@
 @import "tailwindcss";
-@custom-variant dark (&:is(.dark, .dark *));
-
 @theme {
-  --color-swiss-white: #FFFFFF;
-  --color-swiss-black: #000000;
-  --color-swiss-muted: #F2F2F2;
-  --color-swiss-accent: #FF3000;
+  --color-background: #fdfbf7;
+  --color-foreground: #2d2d2d;
+  --color-muted: #e5e0d8;
+  --color-accent: #ff4d4d;
+  --color-border: #2d2d2d;
+  --color-secondary-accent: #2d5da1;
+  --color-paper-yellow: #fff9c4;
 
-  --color-background: #FFFFFF;
-  --color-on-background: #000000;
-  --color-surface: #F2F2F2;
-  --color-on-surface: #000000;
-  --color-primary: #000000;
-  --color-on-primary: #FFFFFF;
-  --color-outline: #000000;
-  
-  --font-headline: var(--font-inter), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
-  --font-label: var(--font-inter), sans-serif;
+  --font-headline: var(--font-headline), cursive;
+  --font-body: var(--font-body), cursive;
+
+  --animate-reveal-text: revealText 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  --animate-fade-up: fadeUp 0.8s ease-out forwards;
+  --animate-page-in: pageFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.dark {
-  --color-background: #000000;
-  --color-on-background: #FFFFFF;
-  --color-surface: #111111;
-  --color-on-surface: #FFFFFF;
-  --color-primary: #FFFFFF;
-  --color-on-primary: #000000;
-  --color-outline: #FFFFFF;
-  --color-swiss-muted: #1A1A1A;
+@keyframes revealText {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
-@utility swiss-grid-pattern {
+@keyframes fadeUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@utility wobbly {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+@utility wobbly-md {
+  border-radius: 255px 25px 225px 25px / 25px 225px 25px 255px;
+}
+
+@utility shadow-hard {
+  box-shadow: 4px 4px 0px 0px #2d2d2d;
+}
+
+@utility shadow-hard-emphasized {
+  box-shadow: 8px 8px 0px 0px #2d2d2d;
+}
+
+@utility shadow-hard-hover {
+  box-shadow: 2px 2px 0px 0px #2d2d2d;
+}
+
+@utility paper-texture {
+  background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
   background-size: 24px 24px;
-  background-image: linear-gradient(to right, var(--color-on-background) 1px, transparent 1px),
-                    linear-gradient(to bottom, var(--color-on-background) 1px, transparent 1px);
-  opacity: 0.05;
 }
 
-.dark .swiss-grid-pattern {
-  background-image: linear-gradient(to right, var(--color-on-background) 1px, transparent 1px),
-                    linear-gradient(to bottom, var(--color-on-background) 1px, transparent 1px);
-  opacity: 0.15;
+@utility tape-decoration {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px;
+  height: 25px;
+  background-color: rgba(45, 45, 45, 0.2);
+  z-index: 10;
 }
 
-@utility swiss-dots {
-  background-image: radial-gradient(var(--color-on-background) 1px, transparent 1px);
-  background-size: 16px 16px;
-  opacity: 0.1;
+@utility tack-decoration {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ff4d4d;
+  box-shadow: 2px 2px 0px 0px rgba(45, 45, 45, 0.4);
+  z-index: 10;
 }
 
-@utility swiss-diagonal {
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    var(--color-on-background) 10px,
-    var(--color-on-background) 11px
-  );
-  opacity: 0.05;
+@utility reveal-container {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
-@utility swiss-noise {
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.04;
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    z-index: 50;
-  }
+@utility scroll-reveal {
+  opacity: 0;
 }
 
-.dark .swiss-noise::before {
-  mix-blend-mode: screen;
-  opacity: 0.08;
+.scroll-reveal.visible {
+  animation: var(--animate-fade-up);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
