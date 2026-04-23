@@ -3,8 +3,19 @@
 import React, { useState } from 'react';
 
 export default function ContactsPage() {
+  const [activeCard, setActiveCard] = useState<string | null>(null);
   const [selectedInterest, setSelectedInterest] = useState('UI/UX Design');
   const interests = ['UI/UX Design', 'Visual Identity', 'User Research'];
+
+  const handlers = (id: string) => ({
+    onMouseEnter:  () => setActiveCard(id),
+    onMouseLeave:  () => setActiveCard(null),
+    onTouchStart:  () => setActiveCard(id),
+    onTouchEnd:    () => setActiveCard(null),
+    onTouchCancel: () => setActiveCard(null),
+  });
+
+  const on = (id: string) => activeCard === id;
 
   return (
     <div className="bg-swiss-muted border-t-4 border-black dark:border-white transition-none w-full min-h-screen pb-32 text-on-background">
@@ -129,35 +140,25 @@ export default function ContactsPage() {
 
         {/* Bottom Three Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-4 border-black dark:border-white bg-on-background mt-8">
-          <div className="bg-background border-b-4 md:border-b-0 md:border-r-4 border-black dark:border-white p-12 space-y-8 group hover:bg-[#FF3000] hover:text-white transition-none">
-            <div className="w-16 h-16 border-4 border-black dark:border-white group-hover:border-white flex items-center justify-center bg-black dark:bg-white text-white dark:text-black group-hover:bg-white group-hover:text-[#FF3000]">
-              <span className="text-xl font-black">01</span>
+          {[
+            { id: 'c-01', num: '01', title: 'DISCOVERY CALL',      desc: 'A decisive deep dive to understand your business objectives and the impact required.',       border: 'border-b-4 md:border-b-0 md:border-r-4' },
+            { id: 'c-02', num: '02', title: 'STRATEGIC BLUEPRINT', desc: 'Translating insights into a rigorous roadmap with defined operational success metrics.',    border: 'border-b-4 md:border-b-0 md:border-r-4' },
+            { id: 'c-03', num: '03', title: 'REFINED EXECUTION',   desc: 'Brutal, accessible, and highly-converting functional interfaces.',                          border: '' },
+          ].map(({ id, num, title, desc, border }) => (
+            <div
+              key={id}
+              {...handlers(id)}
+              className={`${border} border-black dark:border-white p-12 space-y-8 transition-none cursor-pointer ${on(id) ? 'bg-[#FF3000] text-white' : 'bg-background'}`}
+            >
+              <div className={`w-16 h-16 border-4 flex items-center justify-center transition-none ${on(id) ? 'border-white bg-white text-[#FF3000]' : 'border-black dark:border-white bg-black dark:bg-white text-white dark:text-black'}`}>
+                <span className="text-xl font-black">{num}</span>
+              </div>
+              <h3 className="text-4xl font-headline font-black uppercase tracking-tighter">{title}</h3>
+              <p className={`text-lg font-medium leading-relaxed border-l-4 pl-4 ${on(id) ? 'border-white' : 'border-black dark:border-white'}`}>
+                {desc}
+              </p>
             </div>
-            <h3 className="text-4xl font-headline font-black uppercase tracking-tighter">DISCOVERY CALL</h3>
-            <p className="text-lg font-medium leading-relaxed border-l-4 border-black dark:border-white group-hover:border-white pl-4">
-              A decisive deep dive to understand your business objectives and the impact required.
-            </p>
-          </div>
-          
-          <div className="bg-background border-b-4 md:border-b-0 md:border-r-4 border-black dark:border-white p-12 space-y-8 group hover:bg-[#FF3000] hover:text-white transition-none">
-            <div className="w-16 h-16 border-4 border-black dark:border-white group-hover:border-white flex items-center justify-center bg-black dark:bg-white text-white dark:text-black group-hover:bg-white group-hover:text-[#FF3000]">
-              <span className="text-xl font-black">02</span>
-            </div>
-            <h3 className="text-4xl font-headline font-black uppercase tracking-tighter">STRATEGIC BLUEPRINT</h3>
-            <p className="text-lg font-medium leading-relaxed border-l-4 border-black dark:border-white group-hover:border-white pl-4">
-              Translating insights into a rigorous roadmap with defined operational success metrics.
-            </p>
-          </div>
-
-          <div className="bg-background p-12 space-y-8 group hover:bg-[#FF3000] hover:text-white transition-none">
-            <div className="w-16 h-16 border-4 border-black dark:border-white group-hover:border-white flex items-center justify-center bg-black dark:bg-white text-white dark:text-black group-hover:bg-white group-hover:text-[#FF3000]">
-              <span className="text-xl font-black">03</span>
-            </div>
-            <h3 className="text-4xl font-headline font-black uppercase tracking-tighter">REFINED EXECUTION</h3>
-            <p className="text-lg font-medium leading-relaxed border-l-4 border-black dark:border-white group-hover:border-white pl-4">
-              Brutal, accessible, and highly-converting functional interfaces.
-            </p>
-          </div>
+          ))}
         </div>
 
       </div>

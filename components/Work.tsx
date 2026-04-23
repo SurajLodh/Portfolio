@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -44,6 +44,9 @@ const workData = [
 ];
 
 export default function Work() {
+  // Tracks which card is currently "active" (hovered on desktop OR touched on mobile)
+  const [activeId, setActiveId] = useState<string | null>(null);
+
   return (
     <main className="py-32 bg-swiss-muted border-t-4 border-black dark:border-white transition-none" id="work">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -55,55 +58,65 @@ export default function Work() {
         </div>
 
         <div className="space-y-16">
-          {workData.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ 
-                duration: 0.3,
-                ease: "easeOut",
-                delay: index * 0.1 
-              }}
-            >
-              <section
-                className={`group flex flex-col ${project.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-stretch border-4 border-black dark:border-white bg-white dark:bg-black hover:bg-[#FF3000] hover:border-[#FF3000] transition-none cursor-pointer overflow-hidden`}
+          {workData.map((project, index) => {
+            const isActive = activeId === project.id;
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  duration: 0.3,
+                  ease: "easeOut",
+                  delay: index * 0.1 
+                }}
               >
-                <div className="flex-[1.5] p-8 md:p-16 flex flex-col justify-center space-y-8">
-                  <div className="flex items-center gap-4 text-xs font-black uppercase tracking-widest text-black dark:text-white group-hover:text-white transition-none">
-                    <span className="border-2 border-black dark:border-white px-3 py-1 group-hover:border-white transition-none bg-black text-white dark:bg-white dark:text-black group-hover:bg-white group-hover:text-black">{project.role}</span>
-                    <span>{project.date}</span>
+                <section
+                  className={`group flex flex-col ${project.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-stretch border-4 border-black dark:border-white transition-none cursor-pointer overflow-hidden ${isActive ? 'bg-[#FF3000] border-[#FF3000]' : 'bg-white dark:bg-black hover:bg-[#FF3000] hover:border-[#FF3000]'}`}
+                  // Desktop mouse events
+                  onMouseEnter={() => setActiveId(project.id)}
+                  onMouseLeave={() => setActiveId(null)}
+                  // Mobile touch events — show while finger is held, revert on release
+                  onTouchStart={() => setActiveId(project.id)}
+                  onTouchEnd={() => setActiveId(null)}
+                  onTouchCancel={() => setActiveId(null)}
+                >
+                  <div className="flex-[1.5] p-8 md:p-16 flex flex-col justify-center space-y-8">
+                    <div className={`flex items-center gap-4 text-xs font-black uppercase tracking-widest transition-none ${isActive ? 'text-white' : 'text-black dark:text-white group-hover:text-white'}`}>
+                      <span className={`border-2 px-3 py-1 transition-none ${isActive ? 'border-white bg-white text-black' : 'border-black dark:border-white bg-black text-white dark:bg-white dark:text-black group-hover:border-white group-hover:bg-white group-hover:text-black'}`}>{project.role}</span>
+                      <span>{project.date}</span>
+                    </div>
+                    <h3 className={`text-4xl md:text-5xl lg:text-6xl font-headline font-black leading-[1.1] uppercase tracking-tighter transition-none ${isActive ? 'text-white' : 'text-black dark:text-white group-hover:text-white'}`}>
+                      {project.title}
+                    </h3>
+                    <p className={`text-lg md:text-xl font-body font-medium leading-relax border-l-4 pl-6 transition-none ${isActive ? 'text-white border-white' : 'text-black dark:text-white border-black dark:border-white group-hover:text-white group-hover:border-white'}`}>
+                      {project.description}
+                    </p>
+                    <div className="pt-4">
+                      <Link href={project.id === 'ani-news' ? '/work/ani-news' : ''}>
+                        <button className={`px-8 py-4 border-2 font-black uppercase tracking-widest text-xs rounded-none transition-none flex items-center gap-3 ${isActive ? 'border-white bg-white text-black' : 'border-black dark:border-white bg-white dark:bg-black text-black dark:text-white group-hover:border-white group-hover:bg-white group-hover:text-black'}`}>
+                          View Details
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </button>
+                      </Link>
+                    </div>
                   </div>
-                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-headline font-black text-black dark:text-white group-hover:text-white leading-[1.1] uppercase tracking-tighter transition-none">
-                    {project.title}
-                  </h3>
-                  <p className="text-lg md:text-xl font-body text-black dark:text-white group-hover:text-white font-medium leading-relax border-l-4 border-black dark:border-white group-hover:border-white pl-6 transition-none">
-                    {project.description}
-                  </p>
-                  <div className="pt-4">
-                    <Link href={project.id === 'ani-news' ? '/work/ani-news' : ''}>
-                      <button className="px-8 py-4 border-2 border-black dark:border-white bg-white dark:bg-black text-black dark:text-white group-hover:border-white group-hover:text-black group-hover:bg-white font-black uppercase tracking-widest text-xs rounded-none transition-none flex items-center gap-3">
-                        View Details
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter" className="transition-transform group-hover:translate-x-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </button>
-                    </Link>
+                  
+                  {/* Image Container */}
+                  <div className={`flex-1 w-full border-t-4 lg:border-t-0 lg:border-l-4 lg:group-even:border-l-0 lg:group-even:border-r-4 bg-black relative min-h-[300px] lg:min-h-full transition-none p-4 ${isActive ? 'border-[#FF3000]' : 'border-black dark:border-white group-hover:border-[#FF3000]'}`}>
+                    <div className={`w-full h-full border-2 overflow-hidden relative bg-black transition-none ${isActive ? 'border-white' : 'border-black dark:border-white group-hover:border-white'}`}>
+                      <img
+                        alt={project.title}
+                        className={`w-full h-full object-cover duration-300 ease-out ${isActive ? 'grayscale-0 opacity-100' : 'grayscale opacity-85'}`}
+                        src={project.image}
+                      />
+                    </div>
                   </div>
-                </div>
-                
-                {/* Image Container */}
-                <div className="flex-1 w-full border-t-4 lg:border-t-0 lg:border-l-4 lg:group-even:border-l-0 lg:group-even:border-r-4 border-black dark:border-white group-hover:border-[#FF3000] bg-black relative min-h-[300px] lg:min-h-full transition-none p-4">
-                  <div className="w-full h-full border-2 border-black dark:border-white group-hover:border-white overflow-hidden relative transition-none bg-swiss-muted">
-                    <img
-                      alt={project.title}
-                      className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-none"
-                      src={project.image}
-                    />
-                  </div>
-                </div>
-              </section>
-            </motion.div>
-          ))}
+                </section>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </main>

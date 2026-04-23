@@ -1,7 +1,20 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function AniNewsCaseStudy() {
+  const [activeCard, setActiveCard] = useState<string | null>(null);
+
+  const handlers = (id: string) => ({
+    onMouseEnter:  () => setActiveCard(id),
+    onMouseLeave:  () => setActiveCard(null),
+    onTouchStart:  () => setActiveCard(id),
+    onTouchEnd:    () => setActiveCard(null),
+    onTouchCancel: () => setActiveCard(null),
+  });
+
+  const on = (id: string) => activeCard === id;
   return (
     <div className="bg-swiss-muted border-t-4 border-black dark:border-white transition-none w-full min-h-screen pb-32 text-on-background">
       
@@ -79,11 +92,14 @@ export default function AniNewsCaseStudy() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-4 border-black dark:border-white bg-on-background">
           
           {/* Card 1 */}
-          <div className="bg-background border-b-4 lg:border-b-0 lg:border-r-4 border-black dark:border-white p-8 md:p-12 lg:col-span-2 flex flex-col justify-between space-y-16 group hover:bg-[#FF3000] hover:text-white transition-none">
+          <div
+            {...handlers('approach-01')}
+            className={`border-b-4 lg:border-b-0 lg:border-r-4 border-black dark:border-white p-8 md:p-12 lg:col-span-2 flex flex-col justify-between space-y-16 transition-none cursor-pointer ${on('approach-01') ? 'bg-[#FF3000] text-white' : 'bg-background'}`}
+          >
             <div className="space-y-8">
               <div className="text-6xl font-black opacity-20">01</div>
               <h3 className="text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter leading-none">STRUCTURAL DESIGN SYSTEM</h3>
-              <p className="text-lg font-medium leading-relaxed border-l-4 border-black dark:border-white group-hover:border-white pl-4">
+              <p className={`text-lg font-medium leading-relaxed border-l-4 pl-4 ${on('approach-01') ? 'border-white' : 'border-black dark:border-white'}`}>
                 We developed a highly systemic component library focusing on unembellished information density. The architecture utilizes precise typographic scales maintaining strict authority.
               </p>
             </div>
@@ -98,26 +114,32 @@ export default function AniNewsCaseStudy() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-background border-b-4 lg:border-b-0 border-black dark:border-white p-8 md:p-12 flex flex-col space-y-16 group hover:bg-[#FF3000] hover:text-white transition-none">
+          <div
+            {...handlers('approach-02')}
+            className={`border-b-4 lg:border-b-0 border-black dark:border-white p-8 md:p-12 flex flex-col space-y-16 transition-none cursor-pointer ${on('approach-02') ? 'bg-[#FF3000] text-white' : 'bg-background'}`}
+          >
             <div className="space-y-8">
               <div className="text-6xl font-black opacity-20">02</div>
               <h3 className="text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter leading-none">CMS REDESIGN</h3>
-              <p className="text-lg font-medium leading-relaxed border-l-4 border-black dark:border-white group-hover:border-white pl-4">
+              <p className={`text-lg font-medium leading-relaxed border-l-4 pl-4 ${on('approach-02') ? 'border-white' : 'border-black dark:border-white'}`}>
                 Creating an objective dashboard for editors that reduced time-to-publish by 40% through rigorous UI architecture.
               </p>
             </div>
           </div>
 
           {/* Card 3 - Full width */}
-          <div className="bg-background p-8 md:p-12 lg:col-span-3 flex flex-col md:flex-row items-stretch gap-0 group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-none border-t-0 lg:border-t-4 border-black dark:border-white">
-            <div className="flex-[1.5] space-y-8 pr-12 py-8">
+          <div
+            {...handlers('approach-03')}
+            className={`p-8 md:p-12 lg:col-span-3 flex flex-col md:flex-row items-stretch gap-0 transition-none border-t-0 lg:border-t-4 border-black dark:border-white cursor-pointer ${on('approach-03') ? 'bg-black text-white dark:bg-white dark:text-black' : 'bg-background'}`}
+          >
+            <div className="flex-[1.5] space-y-8 pr-0 md:pr-12 py-8">
               <div className="text-6xl font-black opacity-20">03</div>
               <h3 className="text-5xl lg:text-6xl font-headline font-black uppercase tracking-tighter leading-none">USER-CENTRIC DATA FEED</h3>
-              <p className="text-xl font-medium leading-relaxed border-l-4 border-black dark:border-white group-hover:border-white dark:group-hover:border-black pl-6">
+              <p className={`text-xl font-medium leading-relaxed border-l-4 pl-6 ${on('approach-03') ? 'border-white dark:border-black' : 'border-black dark:border-white'}`}>
                 Reimagining the news consumer model. Deployed immediate discovery experiences without visual friction.
               </p>
             </div>
-            <div className="flex-1 w-full bg-black border-l-4 border-black dark:border-white dark:group-hover:border-black group-hover:border-white flex justify-center items-center p-12 relative min-h-[400px]">
+            <div className={`flex-1 w-full bg-black border-l-4 flex justify-center items-center p-12 relative min-h-[400px] ${on('approach-03') ? 'border-white dark:border-black' : 'border-black dark:border-white'}`}>
                <div className="w-64 h-[400px] border-4 border-white dark:border-black overflow-hidden relative">
                   <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-80" alt="Mobile UI" />
                </div>
