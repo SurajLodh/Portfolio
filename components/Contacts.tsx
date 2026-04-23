@@ -4,51 +4,44 @@ import CopyrightYear from './CopyrightYear';
 
 export default function Contacts() {
   return (
-    <footer className="w-full bg-background border-t-4 border-black dark:border-white mt-auto" id="contacts">
-      <div className="flex flex-col md:flex-row justify-between items-stretch max-w-7xl mx-auto border-b-4 border-black dark:border-white">
-        {/* Left: Name + availability */}
-        <div className="flex-1 p-8 md:p-16 space-y-8 bg-background border-b-4 md:border-b-0 md:border-r-4 border-black dark:border-white">
-          <div className="text-4xl md:text-5xl font-headline font-black text-black dark:text-white uppercase tracking-tighter">
-            Gurusha Arora
+    <footer className="w-full relative overflow-hidden mt-auto pt-24 pb-10" id="contacts">
+      
+      {/* Playful background squiggles/shapes */}
+      <div className="absolute top-0 left-0 w-full h-4 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMjBRMTAgMCAyMCAyMFQ0MCAyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTJFOEYwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=')] opacity-50"></div>
+      
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 md:px-8 py-12 gap-10 relative z-10 bg-white border-4 border-foreground rounded-3xl shadow-pop mb-12">
+        <div className="space-y-4 text-center md:text-left">
+          <div className="text-2xl font-headline font-extrabold text-foreground flex items-center justify-center md:justify-start gap-3">
+            <div className="w-10 h-10 rounded-full bg-accent border-2 border-foreground shadow-[2px_2px_0px_#1E293B] animate-wiggle"></div>
+            Let's Talk!
           </div>
-          <p className="text-black dark:text-white max-w-sm font-medium text-lg leading-tight border-l-4 border-black dark:border-white pl-4">
+          <p className="text-muted-foreground max-w-xs font-body font-medium leading-relaxed">
             Available for new opportunities in Product Design and UX Research.
           </p>
         </div>
-
-        {/* Right: Email */}
-        <div className="flex-[0.8] flex flex-col justify-center p-8 md:p-16 bg-black dark:bg-white">
-          <span className="text-xs font-black uppercase tracking-widest mb-4 text-white dark:text-black">INQUIRIES</span>
-          <a
-            className="text-3xl md:text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter hover:text-[#FF3000] transition-none break-all text-white dark:text-black"
+        <div className="flex flex-col items-center md:items-end gap-6 text-right">
+          <a 
+            className="text-2xl md:text-4xl font-headline font-extrabold text-foreground hover:text-accent transition-colors hover:-rotate-1 inline-block" 
             href="mailto:gurushaa11@gmail.com"
           >
             gurushaa11@gmail.com
           </a>
+          <div className="flex gap-4 font-headline text-xs font-bold text-foreground uppercase tracking-widest">
+            <Link className="px-4 py-2 rounded-full border-2 border-foreground hover:bg-secondary transition-colors shadow-[2px_2px_0px_#1E293B]" href="/">IG</Link>
+            <a className="px-4 py-2 rounded-full border-2 border-foreground hover:bg-tertiary transition-colors shadow-[2px_2px_0px_#1E293B]" href="https://linkedin.com/in/gurushaarora1611" target="_blank" rel="noopener noreferrer">IN</a>
+          </div>
         </div>
       </div>
-
-      {/* Bottom bar */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-black uppercase tracking-widest text-black dark:text-white bg-background">
-        <div className="p-8 border-b-4 md:border-b-0 md:border-r-4 border-black dark:border-white w-full md:w-auto">
-          <span>GURUSHA ARORA <CopyrightYear />. CURATED WITH INTENTION</span>
-        </div>
-        <div className="flex w-full md:w-auto">
-          <Link
-            className="flex-1 text-center p-8 border-r-4 border-black dark:border-white hover:bg-[#FF3000] hover:text-white transition-none"
-            href="/"
-          >
-            INSTAGRAM
-          </Link>
-          <a
-            className="flex-1 text-center p-8 hover:bg-[#FF3000] hover:text-white transition-none"
-            href="https://linkedin.com/in/gurushaarora1611"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LINKEDIN
-          </a>
-        </div>
+      
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-headline font-bold uppercase tracking-widest text-muted-foreground pt-8 border-t-2 border-foreground border-dashed">
+        <span className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-quaternary border border-foreground"></div>
+          GURUSHA ARORA <CopyrightYear />
+        </span>
+        <span className="flex items-center gap-2">
+          CURATED WITH INTENTION
+          <div className="w-2 h-2 rounded-full bg-secondary border border-foreground"></div>
+        </span>
       </div>
     </footer>
   );
