@@ -16,6 +16,8 @@
   --color-card: #FFFFFF;
   --color-ring: #8B5CF6;
 
+  --color-shadow: #1E293B;
+
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -40,15 +42,15 @@
 }
 
 @utility shadow-pop {
-  box-shadow: 4px 4px 0px 0px #1E293B;
+  box-shadow: 4px 4px 0px 0px var(--color-shadow);
 }
 
 @utility shadow-pop-hover {
-  box-shadow: 6px 6px 0px 0px #1E293B;
+  box-shadow: 6px 6px 0px 0px var(--color-shadow);
 }
 
 @utility shadow-pop-active {
-  box-shadow: 2px 2px 0px 0px #1E293B;
+  box-shadow: 2px 2px 0px 0px var(--color-shadow);
 }
 
 @utility bg-dot-pattern {
@@ -62,7 +64,7 @@
 }
 
 @utility text-pop {
-  text-shadow: 2px 2px 0px #1E293B;
+  text-shadow: 2px 2px 0px var(--color-shadow);
 }
 
 .dark {
@@ -73,6 +75,7 @@
   --color-border: #334155;
   --color-input: #1e293b;
   --color-card: #1e293b;
+  --color-shadow: #000000;
 }
 
 html {

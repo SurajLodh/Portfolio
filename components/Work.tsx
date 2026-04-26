@@ -12,8 +12,8 @@ const workData = [
     role: 'PRODUCT DESIGNER',
     date: 'FEB 2026 - PRESENT',
     title: 'ANI News Platform Redesign',
-    description: 'Led the full redesign of ANI\'s high-traffic news platform. Built a scalable design system supporting 3M+ monthly active users and a custom CMS dashboard to accelerate editorial workflows.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCVkI4z17REN5LDFmk-b3w5ZotNSAm4SuS1_jdg1wjixKkw2W7BunfrwezsQPK_fiDtvcxSEB3WL2SFiC8KG8kQh1aPz5ncBsQOct7M0wo-LL6DY_A0d_b2v67G2EUip1Sg0muUM07Y31DtFLbLPj07G6knDirjhfNd5bvUVFjTf9NY4nBV-ftbMe-WOK2LsqGO1aWsu-RMcIz9zqv-HycnVX749Y7e_FC4zCIkMLywtj6s0zFgZ1RgrObHgZGkVRDmN8PctrSCK8Qi',
+    description: 'Modernizing South Asia\'s leading news wire. A full redesign focused on speed, high-contrast readability, and a sophisticated editorial layout for millions of daily readers.',
+    image: '/ani-news/image8.png',
     reverse: false,
     color: 'bg-accent'
   },
@@ -86,10 +86,10 @@ export default function Work() {
                 
                 <div className="flex-1 space-y-6 z-10 w-full mb-8 md:mb-0">
                   <div className="flex flex-wrap items-center gap-4 font-headline text-[10px] uppercase tracking-widest font-bold">
-                    <span className={`border-2 border-foreground px-4 py-1.5 rounded-full ${project.color} text-foreground shadow-[2px_2px_0px_#1E293B]`}>
+                    <span className={`border-2 border-foreground px-4 py-1.5 rounded-full ${project.color} ${project.color === 'bg-tertiary' || project.color === 'bg-quaternary' ? 'text-[#1E293B]' : 'text-white'} shadow-[2px_2px_0px_var(--color-shadow)]`}>
                       {project.role}
                     </span>
-                    <span className="text-foreground bg-white border-2 border-foreground px-4 py-1.5 rounded-full shadow-[2px_2px_0px_#1E293B]">{project.date}</span>
+                    <span className="text-foreground bg-card border-2 border-foreground px-4 py-1.5 rounded-full shadow-[2px_2px_0px_var(--color-shadow)]">{project.date}</span>
                   </div>
                   
                   <h3 className="text-3xl lg:text-4xl font-headline font-extrabold text-foreground group-hover:-translate-y-1 transition-transform duration-300">
@@ -101,10 +101,8 @@ export default function Work() {
                   </p>
                   
                   <div className="pt-4">
-                    <Link href={project.id === 'ani-news' ? '/work/ani-news' : ''} passHref legacyBehavior>
-                      <Button asChild>
-                        <a>View Project</a>
-                      </Button>
+                    <Link href={`/work/${project.id}`}>
+                      <Button>View Project</Button>
                     </Link>
                   </div>
                 </div>

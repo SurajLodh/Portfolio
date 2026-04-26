@@ -31,7 +31,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button ref={ref} className={classes} {...props}>
         {children}
         {icon && (
-          <span className="ml-2 w-6 h-6 flex items-center justify-center rounded-full bg-white text-foreground">
+          <span className="ml-2 w-6 h-6 flex items-center justify-center rounded-full bg-background text-foreground">
             {icon}
           </span>
         )}

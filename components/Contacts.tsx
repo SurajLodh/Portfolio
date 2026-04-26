@@ -9,10 +9,10 @@ export default function Contacts() {
       {/* Playful background squiggles/shapes */}
       <div className="absolute top-0 left-0 w-full h-4 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMjBRMTAgMCAyMCAyMFQ0MCAyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTJFOEYwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=')] opacity-50"></div>
       
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 md:px-8 py-12 gap-10 relative z-10 bg-white border-4 border-foreground rounded-3xl shadow-pop mb-12">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 md:px-8 py-12 gap-10 relative z-10 bg-card border-4 border-foreground rounded-3xl shadow-pop mb-12">
         <div className="space-y-4 text-center md:text-left">
           <div className="text-2xl font-headline font-extrabold text-foreground flex items-center justify-center md:justify-start gap-3">
-            <div className="w-10 h-10 rounded-full bg-accent border-2 border-foreground shadow-[2px_2px_0px_#1E293B] animate-wiggle"></div>
+            <div className="w-10 h-10 rounded-full bg-accent border-2 border-foreground shadow-[2px_2px_0px_var(--color-shadow)] animate-wiggle"></div>
             Let's Talk!
           </div>
           <p className="text-muted-foreground max-w-xs font-body font-medium leading-relaxed">
@@ -27,8 +27,8 @@ export default function Contacts() {
             gurushaa11@gmail.com
           </a>
           <div className="flex gap-4 font-headline text-xs font-bold text-foreground uppercase tracking-widest">
-            <Link className="px-4 py-2 rounded-full border-2 border-foreground hover:bg-secondary transition-colors shadow-[2px_2px_0px_#1E293B]" href="/">IG</Link>
-            <a className="px-4 py-2 rounded-full border-2 border-foreground hover:bg-tertiary transition-colors shadow-[2px_2px_0px_#1E293B]" href="https://linkedin.com/in/gurushaarora1611" target="_blank" rel="noopener noreferrer">IN</a>
+            <Link className="px-4 py-2 rounded-full border-2 border-foreground hover:bg-secondary transition-colors shadow-[2px_2px_0px_var(--color-shadow)]" href="/">IG</Link>
+            <a className="px-4 py-2 rounded-full border-2 border-foreground hover:bg-tertiary transition-colors shadow-[2px_2px_0px_var(--color-shadow)]" href="https://linkedin.com/in/gurushaarora1611" target="_blank" rel="noopener noreferrer">IN</a>
           </div>
         </div>
       </div>

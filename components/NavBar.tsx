@@ -83,8 +83,8 @@ function MobileMenu({ pathname }: { pathname: string }) {
   const linkClass = (active: boolean, colorClass: string) =>
     `block w-full text-left px-4 py-3 rounded-lg font-headline text-sm uppercase tracking-widest font-bold transition-all border-2 ${
       active
-        ? `bg-white border-foreground shadow-pop ${colorClass}`
-        : 'text-muted-foreground border-transparent hover:bg-muted dark:hover:bg-gray-800'
+        ? `bg-card border-foreground shadow-pop ${colorClass}`
+        : 'text-muted-foreground border-transparent hover:bg-muted dark:hover:bg-card'
     }`;
 
   return (
@@ -92,7 +92,7 @@ function MobileMenu({ pathname }: { pathname: string }) {
       {/* Hamburger / Close button */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="p-2 rounded-lg border-2 border-foreground bg-white text-foreground shadow-pop active:shadow-pop-active active:translate-y-[2px] transition-all"
+        className="p-2 rounded-lg border-2 border-foreground bg-card text-foreground shadow-pop active:shadow-pop-active active:translate-y-[2px] transition-all"
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
       >
@@ -114,7 +114,7 @@ function MobileMenu({ pathname }: { pathname: string }) {
 
       {/* Dropdown panel */}
       {open && (
-        <div className="absolute right-0 top-[calc(100%+1rem)] w-64 bg-background border-2 border-foreground rounded-2xl shadow-pop overflow-hidden p-3 flex flex-col gap-2">
+        <div className="absolute right-0 top-[calc(100%+1rem)] w-64 bg-card border-2 border-foreground rounded-2xl shadow-pop overflow-hidden p-3 flex flex-col gap-2">
           <Link href="/" onClick={() => setOpen(false)} className={linkClass(pathname === '/', 'text-accent')}>Home</Link>
           <Link href="/work" onClick={() => setOpen(false)} className={linkClass(pathname === '/work' || pathname.startsWith('/work/'), 'text-tertiary')}>Work</Link>
           <Link href="/about" onClick={() => setOpen(false)} className={linkClass(pathname === '/about' || pathname.startsWith('/about/'), 'text-secondary')}>About</Link>

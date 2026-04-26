@@ -23,7 +23,7 @@ export default function Hero() {
           {/* Decorative Circle behind text */}
           <div className="hidden lg:block absolute -top-12 -left-12 w-32 h-32 bg-tertiary rounded-full -z-10 border-2 border-foreground animate-bounce-in" style={{ animationDelay: '0.2s' }}></div>
           
-          <div className="inline-block px-4 py-2 rounded-full border-2 border-foreground bg-white text-foreground font-headline font-bold text-xs tracking-widest uppercase shadow-pop animate-bounce-in">
+          <div className="inline-block px-4 py-2 rounded-full border-2 border-foreground bg-card text-foreground font-headline font-bold text-xs tracking-widest uppercase shadow-pop animate-bounce-in">
             UI/UX DESIGNER
           </div>
           
@@ -54,7 +54,7 @@ export default function Hero() {
             </Button>
             
             <a 
-              className="inline-flex items-center justify-center font-headline font-bold rounded-full border-2 border-foreground transition-all duration-300 bg-white text-foreground shadow-pop hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-pop-hover active:translate-x-[2px] active:translate-y-[2px] active:shadow-pop-active px-6 py-3 text-base gap-2"
+              className="inline-flex items-center justify-center font-headline font-bold rounded-full border-2 border-foreground transition-all duration-300 bg-card text-foreground shadow-pop hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-pop-hover active:translate-x-[2px] active:translate-y-[2px] active:shadow-pop-active px-6 py-3 text-base gap-2"
               href="/media/Gurusha_Arora_UX_UI_Designer.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -63,11 +63,14 @@ export default function Hero() {
               Resume
             </a>
             
-            <Button variant="secondary" asChild>
-              <a href="https://linkedin.com/in/gurushaarora1611" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </Button>
+            <a 
+              href="https://linkedin.com/in/gurushaarora1611" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center font-headline font-bold rounded-full border-2 border-foreground transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] bg-transparent text-foreground hover:bg-tertiary px-6 py-3 text-base"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
         
@@ -75,11 +78,11 @@ export default function Hero() {
         <div className="flex-1 relative flex justify-center items-center mt-12 md:mt-0 animate-bounce-in" style={{ animationDelay: '0.3s' }}>
           
           {/* Decorative background blocks */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-tertiary rounded-full -z-20 border-2 border-foreground translate-x-4 translate-y-4 hidden md:block"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-white rounded-full -z-10 border-2 border-foreground bg-dot-pattern hidden md:block"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-card rounded-full -z-20 border-2 border-foreground translate-x-4 translate-y-4 hidden md:block"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-background rounded-full -z-10 border-2 border-foreground bg-dot-pattern hidden md:block"></div>
           
           <div className="relative w-72 h-72 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]">
-            <div className="w-full h-full border-4 border-foreground shadow-[12px_12px_0px_#1E293B] overflow-hidden bg-white" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
+            <div className="w-full h-full border-4 border-foreground shadow-pop overflow-hidden bg-card" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
               <img 
                 alt="Gurusha Arora" 
                 className="w-full h-full object-cover" 
